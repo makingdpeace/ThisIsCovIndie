@@ -7,39 +7,68 @@ function preload() {
   images = [
     {
       img: loadImage('../Images/Bottom Banner.png'),
-      speed: 3,     // Slow speed for first image
-      xPos: -100,   // Initial x position
+      speed: 1,     // Slow speed for first image
+      xPos: 0,   // Initial x position
       yPos: 510,    // Explicitly set Y position
       scale: 0.33    // 50% of original size
     },
     {
       img: loadImage('../Images/Top Banner.png'),
-      speed: 1,     // Medium speed for second image
-      xPos: -100,
+      speed: 1.5,     // Medium speed for second image
+      xPos: 0,
       yPos: 50,    // Different Y position
       scale: 0.35    // 70% of original size
     },
     {
       img: loadImage('../Images/elephant.png'),
-      speed: 1.5,     // Faster speed for third image
-      xPos: -100,
+      speed: 2,     // Faster speed for third image
+      xPos: 0,
       yPos: 140,    // Another Y position
       scale: 0.27    // 60% of original size
     },
     {
       img: loadImage('../Images/Left bird.png'),
-      speed: 2,   // Another custom speed
-      xPos: -100,
+      speed: 2.5,   // Another custom speed
+      xPos: 0,
       yPos: 250,    // Explicit Y position
       scale: 0.28    // 40% of original size
     },
     {
       img: loadImage('../Images/Right bird.png'),
-      speed: 2.5,   // Slowest speed
-      xPos: -100,
+      speed: 3,   // Slowest speed
+      xPos: 0,
       yPos: 250,    // Explicit Y position
       scale: 0.26    // 80% of original size
     },
+    {
+      img: loadImage('../Images/TheCovClubText.png'),
+      speed: 3.5,   // Slowest speed
+      xPos: 0,
+      yPos: 65,    // Explicit Y position
+      scale: 0.26    // 80% of original size
+    },
+    {
+      img: loadImage('../Images/ThisIsCoventryIndieText.png'),
+      speed: 4,   // Slowest speed
+      xPos: 0,
+      yPos: 581,    // Explicit Y position
+      scale: 0.23    // 80% of original size
+    },
+    {
+      img: loadImage('../Images/spotify.png'),
+      speed: 4.5,   // Slowest speed
+      xPos: 0,
+      yPos: 400,    // Explicit Y position
+      scale: 0.1    // 80% of original size
+    },
+    {
+      img: loadImage('../Images/peacewhite.png'),
+      speed: 0,   // Slowest speed
+      xPos: 600,
+      yPos: 330,    // Explicit Y position
+      scale: 0.35    // 80% of original size
+    },
+
     // {
     //   img: loadImage('../Images/Cov black and white.png'),
     //   speed: 0.5,   // Slowest speed
