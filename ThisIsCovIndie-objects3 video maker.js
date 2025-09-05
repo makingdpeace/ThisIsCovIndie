@@ -23,7 +23,7 @@ let positions = [ // Array of positions for each image
     { x: 540, y: 610 },   // Position for image1 top banner
     { x: 510, y: 870 },   // Position for image2 elephant
     { x: 310, y: 1020 },   // Position for image3 left bird
-    { x: 770, y: 1030 },   // Position for image4 right bird
+    { x: 775, y: 1030 },   // Position for image4 right bird
     { x: 540, y: 530 },   // Position for image5 cov club text
     { x: 540, y: 1380 },   // Position for image6 this is cov indie text
     { x: 540, y: 1120 },   // Position for image7 spotify
@@ -44,8 +44,8 @@ let positions = [ // Array of positions for each image
   0.46, //image4 right bird
   0.45, //image5 cov club text
   0.42, //image6 this is cov indie text
-  0.35, //image7 spotify
-  0.6, //image8 peace whote
+  0.32, //image7 spotify
+  0.55, //image8 peace whote
   1,  //image9 cov black and white
   0.51, //image10 cov baths
   0.17, //image11 tictocdogtrumpet
@@ -55,7 +55,7 @@ let positions = [ // Array of positions for each image
   ]; // Array to specify scale for each image
 
 // Which indices are always visible
-const constantIndices = [0, 1, 5, 6, 8];
+const constantIndices = [0, 1, 5, 6];
 
 // Fixed swapping pairs defined once (no runtime changes)
 // Each entry: [indexA, indexB, intervalMs]
@@ -64,6 +64,7 @@ const swappingPairs = [
   [3, 12, 3000],
   [4, 13, 5000],
   [14, 11, 7000],
+  [7, 8, 11000],
 ];
 
 // Internal state derived from swappingPairs
