@@ -70,6 +70,13 @@ const swappingPairs = [
 // Internal state derived from swappingPairs
 let pairStates = [];
 
+// --- Recording controls ---
+let recording = false;
+let saveCount = 0;
+const RECORD_FPS = 30;
+const RECORD_SECONDS = 30;
+const MAX_FRAMES = RECORD_FPS * RECORD_SECONDS; // 900
+
 function preload() {
   for (let i = 0; i < imageNames.length; i++) {
     images[i] = loadImage(imageNames[i]);
@@ -78,6 +85,7 @@ function preload() {
 
 function setup() {
   createCanvas(1080, 1920);
+  frameRate(RECORD_FPS); // set FPS for both playback and capture
   const now = millis();
   for (let p of swappingPairs) {
     pairStates.push({
@@ -88,6 +96,8 @@ function setup() {
       showingA: true
     });
   }
+  // start recording immediately
+  //startRecording(); //UNCOMMENT IF NOT RECORDING
 }
 
 function draw() {
@@ -107,6 +117,15 @@ function draw() {
     }
     drawImageAt(ps.showingA ? ps.a : ps.b);
   }
+  // If recording, save the current frame
+  if (recording) {
+    const name = 'frame' + nf(saveCount, 4) + '.png'; // frame0000.png ...
+    saveCanvas(name);
+    saveCount++;
+    if (saveCount >= MAX_FRAMES) {
+      stopRecording();
+    }
+  }
 }
 
 function drawImageAt(idx) {
@@ -120,4 +139,18 @@ function drawImageAt(idx) {
   imageMode(CENTER);
   image(img, pos.x, pos.y, w, h);
   imageMode(CORNER);
-} 
+}
+
+function startRecording() {
+  recording = true;
+  saveCount = 0;
+  console.log('Recording started — frames will download to your browser downloads folder.');
+  // Optional visual cue:
+  createP('Recording... will auto-stop after 30s (900 frames).').style('font-family','sans-serif');
+}
+
+function stopRecording() {
+  recording = false;
+  console.log('Recording stopped. Move the saved PNGs into a single folder and run ffmpeg to make a video.');
+  alert('Recording stopped. Move the saved PNGs into a single folder and run ffmpeg to make a video.');
+}
